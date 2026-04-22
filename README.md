@@ -12,8 +12,17 @@ le panneau de notifications web.
 
 ## Installation
 
-1. Copiez le dossier `TaskIdPrefix` dans le répertoire `plugins/` de votre instance
-   Kanboard :
+### Via Git (recommandé)
+
+```bash
+cd /path/to/kanboard/plugins
+git clone git@github.com:9ui11aum3/TaskIdPrefix-kanboard.git TaskIdPrefix
+```
+
+### Manuellement
+
+1. Téléchargez l'archive depuis [github.com/9ui11aum3/TaskIdPrefix-kanboard](https://github.com/9ui11aum3/TaskIdPrefix-kanboard)
+2. Décompressez et copiez le dossier dans `plugins/TaskIdPrefix/` :
    ```
    plugins/
    └── TaskIdPrefix/
@@ -23,9 +32,9 @@ le panneau de notifications web.
        ├── Template/
        └── ...
    ```
-2. Rechargez Kanboard (videz l'OPcache PHP si nécessaire).
-3. Le plugin est automatiquement activé. Rendez-vous dans **Paramètres → Task ID Prefix**
-   pour choisir votre préfixe.
+
+Rechargez Kanboard (videz l'OPcache PHP si nécessaire). Le plugin est automatiquement
+activé. Rendez-vous dans **Paramètres → Task ID Prefix** pour choisir votre préfixe.
 
 Aucune dépendance Composer. Compatible PHP 7.4+.
 
@@ -111,3 +120,9 @@ jour les templates du plugin si nécessaire.
 ## Licence
 
 MIT — voir [LICENSE](LICENSE)
+
+---
+
+## Source
+
+[github.com/9ui11aum3/TaskIdPrefix-kanboard](https://github.com/9ui11aum3/TaskIdPrefix-kanboard)
