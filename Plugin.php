@@ -45,20 +45,6 @@ class Plugin extends Base
             'template:config:sidebar',
             'taskIdPrefix:config/sidebar_link'
         );
-
-        // Route pour la page de configuration
-        $this->router->addRoute(
-            '/config/task-id-prefix',
-            'ConfigController',
-            'index',
-            'TaskIdPrefix'
-        );
-        $this->router->addRoute(
-            '/config/task-id-prefix/save',
-            'ConfigController',
-            'save',
-            'TaskIdPrefix'
-        );
     }
 
     public function getHelpers()
