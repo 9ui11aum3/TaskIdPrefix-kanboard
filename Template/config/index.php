@@ -1,5 +1,3 @@
-<?php echo $this->layout('config/layout', array('title' => t('Task ID Prefix'), 'values' => $values, 'errors' => $errors)) ?>
-
 <div class="page-header">
     <h2><?= t('Task ID Prefix') ?></h2>
 </div>
@@ -13,15 +11,14 @@
             'taskidprefix_prefix',
             $values,
             $errors,
-            array('placeholder' => 'n°', 'maxlength' => '20', 'tabindex' => '1')
+            array('placeholder' => 'n°', 'maxlength' => '20')
         ) ?>
         <p class="form-help">
-            <?= t('Replaces the "#" character before task IDs in email bodies and web notifications. Leave blank to restore the default (n°).') ?>
+            <?= t('Replaces the "#" character before task IDs in email notifications and the web notification panel. Leave blank to use the default: n°') ?>
         </p>
     </div>
 
     <div class="form-actions">
-        <input type="submit" value="<?= t('Save') ?>" class="btn btn-blue" tabindex="2" />
-        <?= $this->url->link(t('Cancel'), 'ConfigController', 'index', array(), false, 'btn btn-default', '', false, 'TaskIdPrefix') ?>
+        <input type="submit" value="<?= t('Save') ?>" class="btn btn-blue" />
     </div>
 </form>
