@@ -45,6 +45,24 @@ class Plugin extends Base
             'template:config:sidebar',
             'taskIdPrefix:config/sidebar_link'
         );
+
+        // Surcharge du notificateur Zulip si le plugin Zulip est installé.
+        // On utilise app.bootstrap qui fire APRÈS initialize() de tous les plugins,
+        // garantissant que Zulip a déjà enregistré son type avant qu'on le remplace.
+        $this->on('app.bootstrap', function ($container) {
+            if (class_exists('\Kanboard\Plugin\Zulip\Notification\Zulip')) {
+                $container['projectNotificationTypeModel']->setType(
+                    'zulip',
+                    t('Zulip'),
+                    '\Kanboard\Plugin\TaskIdPrefix\Notification\ZulipWithPrefix'
+                );
+                $container['userNotificationTypeModel']->setType(
+                    'zulip',
+                    'Zulip',
+                    '\Kanboard\Plugin\TaskIdPrefix\Notification\ZulipWithPrefix'
+                );
+            }
+        });
     }
 
     public function getHelpers()
