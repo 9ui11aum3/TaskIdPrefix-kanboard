@@ -34,6 +34,6 @@ class ConfigController extends BaseController
 
         $this->configModel->save(array('taskidprefix_prefix' => $prefix));
         $this->flash->success(t('Settings saved successfully.'));
-        $this->response->redirect($this->helper->url->to('ConfigController', 'index', array(), 'TaskIdPrefix'));
+        $this->response->redirect($this->helper->url->to('ConfigController', 'index', array('plugin' => 'TaskIdPrefix')));
     }
 }

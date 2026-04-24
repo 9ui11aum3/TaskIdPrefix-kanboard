@@ -2,7 +2,7 @@
     <h2><?= t('Task ID Prefix') ?></h2>
 </div>
 
-<form method="post" action="<?= $this->url->to('ConfigController', 'save', array(), 'TaskIdPrefix') ?>">
+<form method="post" action="<?= $this->url->href('ConfigController', 'save', array('plugin' => 'TaskIdPrefix')) ?>">
     <?= $this->form->csrf() ?>
 
     <div class="form-group">

@@ -1,3 +1,3 @@
 <li>
-    <?= $this->url->link(t('Task ID Prefix'), 'ConfigController', 'index', [], false, '', '', false, 'TaskIdPrefix') ?>
+    <?= $this->url->link(t('Task ID Prefix'), 'ConfigController', 'index', array('plugin' => 'TaskIdPrefix')) ?>
 </li>
